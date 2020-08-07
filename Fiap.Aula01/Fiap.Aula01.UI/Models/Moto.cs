@@ -16,6 +16,16 @@ namespace Fiap.Aula01.UI.Models
 
         //Propriedades(Gets/Sets)
         public int Cilindros { get; set; }
-        
+
+        public override void Parar()
+        {
+            Console.WriteLine("Moto parando");
+        }
+
+        public override void Acelerar(double velocidade)
+        {
+            Console.WriteLine("Moto acelerando");
+        }
+
     }
 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula01\\Fiap.Aula01.UI\\Fiap.Aula01.UI.csproj",
-      "projectName": "Fiap.Aula01.UI",
-      "projectPath": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula01\\Fiap.Aula01.UI\\Fiap.Aula01.UI.csproj",
+      "projectUniqueName": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula01\\Fiap.Banco.Model\\Fiap.Banco.Model.csproj",
+      "projectName": "Fiap.Banco.Model",
+      "projectPath": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula01\\Fiap.Banco.Model\\Fiap.Banco.Model.csproj",
       "packagesPath": "C:\\Users\\55119\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula01\\Fiap.Aula01.UI\\obj\\",
+      "outputPath": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula01\\Fiap.Banco.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\55119\\AppData\\Roaming\\NuGet\\NuGet.Config",

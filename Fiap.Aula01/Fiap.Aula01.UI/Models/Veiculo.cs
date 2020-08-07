@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fiap.Aula01.UI.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,16 +14,10 @@ namespace Fiap.Aula01.UI.Models
 
         private decimal _valor;
 
-        //Construtores
-        public Veiculo(string nome)
-        {
-            _nome = nome;
-        }
-
         //Propriedades (Gets/Sets)
-        public string Marca{ get; set; }
-
         //prop -> tab tab
+        public string Marca { get; set; }
+
         public String Placa { get; set; }
 
         public string Nome
@@ -37,9 +32,30 @@ namespace Fiap.Aula01.UI.Models
             set { _valor = value; }
         }
 
+
+        //Construtores
+        public Veiculo(string nome)
+        {
+            _nome = nome;
+        }
+       
         //Métodos
-        public void Acelerar(double velocidade)
-        {}
+        //virtual -> permite a sobrescrita do método
+        public virtual void Acelerar(double velocidade)
+        {
+            if(velocidade < 0)
+            {
+                throw new VelocidadeInvalidaException("Velocidade não pode ser negativa");
+            }
+
+            Console.WriteLine("Veículo acelerando" + velocidade);
+        }
+
+        //Sobrecarga de método
+        public void Acelerar()
+        {
+            Console.WriteLine("Veículo acelerando");
+        }
 
         public abstract void Parar();
     }

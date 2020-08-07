@@ -11,3 +11,16 @@ C:\Users\55119\Desktop\FIAP_2Ano\ENTERPRISE APPLICATION DEVELOPMENT\Semestre2\Fi
 C:\Users\55119\Desktop\FIAP_2Ano\ENTERPRISE APPLICATION DEVELOPMENT\Semestre2\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.dll
 C:\Users\55119\Desktop\FIAP_2Ano\ENTERPRISE APPLICATION DEVELOPMENT\Semestre2\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.pdb
 C:\Users\55119\Desktop\FIAP_2Ano\ENTERPRISE APPLICATION DEVELOPMENT\Semestre2\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.genruntimeconfig.cache
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.csprojAssemblyReference.cache
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.AssemblyInfoInputs.cache
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.AssemblyInfo.cs
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.csproj.CoreCompileInputs.cache
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.dll
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.pdb
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\bin\Debug\netcoreapp3.1\Fiap.Aula01.UI.exe
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\bin\Debug\netcoreapp3.1\Fiap.Aula01.UI.deps.json
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\bin\Debug\netcoreapp3.1\Fiap.Aula01.UI.runtimeconfig.json
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\bin\Debug\netcoreapp3.1\Fiap.Aula01.UI.runtimeconfig.dev.json
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\bin\Debug\netcoreapp3.1\Fiap.Aula01.UI.dll
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\bin\Debug\netcoreapp3.1\Fiap.Aula01.UI.pdb
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Aula01.UI\obj\Debug\netcoreapp3.1\Fiap.Aula01.UI.genruntimeconfig.cache
