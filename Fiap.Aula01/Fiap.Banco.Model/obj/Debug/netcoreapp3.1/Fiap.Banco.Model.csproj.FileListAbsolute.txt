@@ -1,0 +1,13 @@
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\bin\Debug\netcoreapp3.1\Fiap.Banco.Model.exe
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\bin\Debug\netcoreapp3.1\Fiap.Banco.Model.deps.json
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\bin\Debug\netcoreapp3.1\Fiap.Banco.Model.runtimeconfig.json
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\bin\Debug\netcoreapp3.1\Fiap.Banco.Model.runtimeconfig.dev.json
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\bin\Debug\netcoreapp3.1\Fiap.Banco.Model.dll
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\bin\Debug\netcoreapp3.1\Fiap.Banco.Model.pdb
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\obj\Debug\netcoreapp3.1\Fiap.Banco.Model.csprojAssemblyReference.cache
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\obj\Debug\netcoreapp3.1\Fiap.Banco.Model.AssemblyInfoInputs.cache
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\obj\Debug\netcoreapp3.1\Fiap.Banco.Model.AssemblyInfo.cs
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\obj\Debug\netcoreapp3.1\Fiap.Banco.Model.csproj.CoreCompileInputs.cache
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\obj\Debug\netcoreapp3.1\Fiap.Banco.Model.dll
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\obj\Debug\netcoreapp3.1\Fiap.Banco.Model.pdb
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula01\Fiap.Banco.Model\obj\Debug\netcoreapp3.1\Fiap.Banco.Model.genruntimeconfig.cache

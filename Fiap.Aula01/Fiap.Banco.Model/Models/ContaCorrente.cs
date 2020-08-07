@@ -9,9 +9,15 @@ namespace Fiap.Banco.Model
     {
         public TipoConta tipo { get; set; }
 
+        public ContaCorrente(int agencia, DateTime dataAbertura, int numero, decimal saldo) 
+        {
+            
+        }
+        
+
         public override void Depositar(decimal valor)
         {
-            Saldo = Saldo + valor;
+            Saldo += valor;
         }
 
         public override void Retirar(decimal valor)
@@ -22,7 +28,7 @@ namespace Fiap.Banco.Model
             }
             else
             {
-                Saldo = Saldo - valor;
+                Saldo -= valor;
             }
         }
     }

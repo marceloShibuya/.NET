@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Fiap.Banco.Model/1.0.0": {
+        "runtime": {
+          "Fiap.Banco.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fiap.Banco.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
