@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fiap.Banco.Model.Exceptions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,20 +10,52 @@ namespace Fiap.Banco.Model
     {
         static void Main(string[] args)
         {
-            ContaCorrente cc = new ContaCorrente(111,DateTime.Now,0001, (decimal)200.00);
-            ContaPoupanca cp = new ContaPoupanca(222, DateTime.Now, 0002, (decimal)1000.00,5.00M);
+            ContaCorrente cc = new ContaCorrente()
+            {
+                Agencia = 1,
+                Numero = 123,
+                DataAbertura = new DateTime(2020,1,1),
+                Saldo = 100,
+                Tipo = TipoConta.Comum
+            };
 
-            IList<ContaCorrente> lista = new List<ContaCorrente>();
-            lista.Add(cc);
-            lista.Add(new ContaCorrente(112, DateTime.Now, 0003, (decimal)100.00));
-            lista.Add(new ContaCorrente(113, DateTime.Now, 0004, (decimal)300.00));
+            ContaPoupanca cp = new ContaPoupanca(0.003m)
+            {
+                Agencia = 1,
+                Numero = 321,
+                DataAbertura = DateTime.Now,
+                Saldo = 30,
+                Taxa = 1
+            };
 
-            foreach(ContaCorrente item in lista){
-                Console.WriteLine(lista.saldo);
+            //Chamar o método retirar tratando o possível exception
+            try
+            {
+                cc.Retirar(1000);
+            }catch(SaldoInsuficienteException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            //Criar uma lista de conta poupança
+            IList<ContaPoupanca> lista = new List<ContaPoupanca>();
+            lista.Add(cp);
+            lista.Add(new ContaPoupanca(0.003m) { Agencia = 2, Saldo = 100 });
+            lista.Add(new ContaPoupanca(0.003m) { Saldo = 400 });
+
+
+            foreach (ContaPoupanca item in lista)
+            {
+                Console.WriteLine("Saldo: " + item.Saldo);
+                Console.WriteLine("Retorno: " + item.CalculaRetornoInvestimento());
+                Console.WriteLine("Agencia: " + item.Agencia);
             }
 
 
-           
+
+
+
+
         }
     }
 }

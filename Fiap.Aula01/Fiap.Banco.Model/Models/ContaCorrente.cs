@@ -5,28 +5,21 @@ using System.Text;
 
 namespace Fiap.Banco.Model
 {
-    class ContaCorrente : Conta 
+    //alt + enter -> possíveis soluções para o problema
+    //sealed -> classe que não pode ser herdada
+    sealed class ContaCorrente : Conta 
     {
-        public TipoConta tipo { get; set; }
+        //Atributo
+        public TipoConta Tipo{ get; set; }
 
-        public ContaCorrente(int agencia, DateTime dataAbertura, int numero, decimal saldo) 
-        {
-            
-        }
-        
-
-        public override void Depositar(decimal valor)
-        {
-            Saldo += valor;
-        }
 
         public override void Retirar(decimal valor)
         {
-            if(tipo == TipoConta.Comum && Saldo < valor)
+            if(Tipo == TipoConta.Comum && Saldo < valor)
             {
                 throw new SaldoInsuficienteException("Saque não permitido");
             }
-            else
+            else // não é necessário o else pois quando lança a exceção já vai sair do método
             {
                 Saldo -= valor;
             }

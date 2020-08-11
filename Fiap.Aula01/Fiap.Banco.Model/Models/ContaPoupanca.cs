@@ -7,34 +7,22 @@ namespace Fiap.Banco.Model
 {
     class ContaPoupanca : Conta, IContaInvestimento
     {
-
+        //Propriedade 
         public decimal Taxa { get; set; }
 
+        //Field
+        //readonly -> só podemos adicionar valor na declaração ou no construtor 
         private readonly decimal _rendimento;
 
-        public ContaPoupanca(decimal taxa, decimal rendimento) : this(taxa)
+        //Construtor - ctor -> tab tab
+        public ContaPoupanca( decimal rendimento) 
         {
-            _rendimento = rendimento;
+            this._rendimento = rendimento;
         }
 
-        public ContaPoupanca(int agencia, DateTime dataAbertura, int numero, decimal saldo,decimal taxa) 
+        public decimal CalculaRetornoInvestimento()
         {
-            Taxa = Taxa;
-        }
-
-        public ContaPoupanca(decimal _rendimento)
-        {
-            _rendimento = (decimal)0.010;
-        }
-
-        public void CalculaRetornoInvestimento()
-        {
-            Saldo *= _rendimento;
-        }
-
-        public override void Depositar(decimal valor)
-        {
-            Saldo += valor;
+            return Saldo *= _rendimento;
         }
 
         public override void Retirar(decimal valor)
