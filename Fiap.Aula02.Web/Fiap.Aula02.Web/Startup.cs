@@ -42,6 +42,12 @@ namespace Fiap.Aula02.Web
 
             app.UseAuthorization();
 
+            //localhost:123/cliente/cadastrar -> ClienteController -> Cadastrar
+            //localhost:123/home/index -> HomeController -> Index
+            //localhost:123/home -> HomeController -> Index
+            //localhost:123/ -> HomeController -> Index
+            //localhost:123/cliente -> ClienteController -> Index
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
