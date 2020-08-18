@@ -186,3 +186,5 @@ C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula02.Web\Fiap.Aula02.Web\bin\Debug\n
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula02.Web\Fiap.Aula02.Web\obj\Debug\netcoreapp3.1\Fiap.Aula02.Web.csproj.CoreCompileInputs.cache
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula02.Web\Fiap.Aula02.Web\obj\Debug\netcoreapp3.1\Fiap.Aula02.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula02.Web\Fiap.Aula02.Web\obj\Debug\netcoreapp3.1\Razor\Views\Produto\Cadastrar.cshtml.g.cs
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula02.Web\Fiap.Aula02.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Cadastrar.cshtml.g.cs
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula02.Web\Fiap.Aula02.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
