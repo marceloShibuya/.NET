@@ -1,0 +1,37 @@
+﻿@model List<Funcionario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<!--  Link para cadastrar -->
+<a asp-action="cadastrar">Cadastrar</a>
+
+<!-- Criar uma tabela HTML e fazer um loop para exibir todos os funcionários -->
+<table class="table table-striped">
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th>Salário</th>
+        <th>Ativo</th>
+        <th>Cargo</th>
+        <th></th>
+    </tr>
+    @foreach (var func in Model)
+    {
+        <tr>
+            <td>@func.Codigo</td>
+            <td>@func.Nome</td>
+            <td>@func.DataNascimento</td>
+            <td>@func.Salario</td>
+            <td>@func.Ativo</td>
+            <td>@func.Cargo</td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@func.Codigo">Atualizar</a>
+            </td>
+        </tr>
+    }
+</table>
+
