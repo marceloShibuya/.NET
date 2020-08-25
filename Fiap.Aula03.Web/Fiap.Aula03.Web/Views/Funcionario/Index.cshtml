@@ -5,6 +5,19 @@
 }
 
 <h1>Index</h1>
+
+<tds texto="@TempData["msg"]"></tds>
+
+@*
+    @if (TempData["msg"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["msg"]
+        </div>
+    }
+*@
+
+
 <!--  Link para cadastrar -->
 <a asp-action="cadastrar">Cadastrar</a>
 
@@ -17,6 +30,7 @@
         <th>Salário</th>
         <th>Ativo</th>
         <th>Cargo</th>
+        <th>Setor</th>
         <th></th>
     </tr>
     @foreach (var func in Model)
@@ -24,14 +38,44 @@
         <tr>
             <td>@func.Codigo</td>
             <td>@func.Nome</td>
-            <td>@func.DataNascimento</td>
+            <td>@func.DataNascimento.ToShortDateString()</td>
             <td>@func.Salario</td>
             <td>@func.Ativo</td>
             <td>@func.Cargo</td>
+            <td>@func.Setor</td>
             <td>
-                <a asp-action="Editar" asp-route-id="@func.Codigo">Atualizar</a>
+                <a asp-action="Editar" class="btn btn-sm btn-dark" asp-route-id="@func.Codigo">Atualizar</a>
+                <!-- Excluir um funcionário -->
+                <button onclick="funcionarioId.value = @func.Codigo" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+                    Excluir
+                </button>
             </td>
         </tr>
     }
 </table>
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Deseja realmente excluir o funcionário?
+            </div>
+            <div class="modal-footer">
+                <form asp-action="remover">
+                    <input type="hidden" name="id" id="funcionarioId" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Sim</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
