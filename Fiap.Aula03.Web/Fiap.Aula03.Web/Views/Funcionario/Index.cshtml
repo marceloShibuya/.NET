@@ -40,7 +40,7 @@
             <td>@func.Nome</td>
             <td>@func.DataNascimento.ToShortDateString()</td>
             <td>@func.Salario</td>
-            <td>@func.Ativo</td>
+            <td>@(func.Ativo? "sim" : "Não")</td>
             <td>@func.Cargo</td>
             <td>@func.Setor</td>
             <td>
@@ -79,3 +79,8 @@
     </div>
 </div>
 
+@section Banner{ 
+    <div class="alert alert-warning text-center">
+        Clique aqui! Para saber mais...
+    </div>
+}

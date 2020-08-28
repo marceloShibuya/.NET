@@ -19,27 +19,6 @@ namespace Fiap.Aula03.Web.Controllers
             //Enviar a lista de funcionários para a view
             return View(_banco);
         }
-        
-        //Ajustar a listagem e edição para exibir e modificar o setor
-        [HttpGet]
-        public IActionResult Cadastrar()
-        {
-            CarregaSetores();
-            return View();
-        }
-
-        private void CarregaSetores()
-        {
-            //Enviar os dados para preencher o select de setores da empresa
-            List<string> lista = new List<string>();
-            lista.Add("RH");
-            lista.Add("Financeiro");
-            lista.Add("TI");
-            lista.Add("COmercial");
-
-            ViewBag.setores = new SelectList(lista);
-        }
-
 
         //Cadastrar o funcinonario na lista e retornar uma msg de sucesso
         //Não permitir o cadastrado novamente caso o usuario atualize a página de resposta
@@ -60,6 +39,27 @@ namespace Fiap.Aula03.Web.Controllers
             TempData["msg"] = "Funcionário registrado";
             return RedirectToAction("Cadastrar");
         }
+
+        //Ajustar a listagem e edição para exibir e modificar o setor
+        [HttpGet]
+        public IActionResult Cadastrar()
+        {
+            CarregaSetores();
+            return View();
+        }
+
+        private void CarregaSetores()
+        {
+            //Enviar os dados para preencher o select de setores da empresa
+            List<string> lista = new List<string>();
+            lista.Add("RH");
+            lista.Add("Financeiro");
+            lista.Add("TI");
+            lista.Add("COmercial");
+
+            ViewBag.setores = new SelectList(lista);
+        }
+
 
         //Método que recebe  o id do funcionário e retorna os valores do funcionário para a view
         [HttpGet]

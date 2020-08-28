@@ -224,3 +224,6 @@ C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula03.Web\Fiap.Aula03.Web\obj\Debug\n
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula03.Web\Fiap.Aula03.Web\obj\Debug\netcoreapp3.1\Fiap.Aula03.Web.dll
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula03.Web\Fiap.Aula03.Web\obj\Debug\netcoreapp3.1\Fiap.Aula03.Web.pdb
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula03.Web\Fiap.Aula03.Web\obj\Debug\netcoreapp3.1\Fiap.Aula03.Web.genruntimeconfig.cache
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula03.Web\Fiap.Aula03.Web\obj\Debug\netcoreapp3.1\Razor\Views\Funcionario\_Form.cshtml.g.cs
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula03.Web\Fiap.Aula03.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vaga\Index.cshtml.g.cs
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula03.Web\Fiap.Aula03.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vaga\Cadastrar.cshtml.g.cs
