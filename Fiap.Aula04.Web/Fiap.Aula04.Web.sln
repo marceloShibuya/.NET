@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Aula04.Web", "Fiap.Aula04.Web\Fiap.Aula04.Web.csproj", "{A864D8FC-3028-4507-86C9-9D1C482C68D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Aula04.Web", "Fiap.Aula04.Web\Fiap.Aula04.Web.csproj", "{CD678AD8-3D29-4DB3-88E0-263A1ACD51F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A864D8FC-3028-4507-86C9-9D1C482C68D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A864D8FC-3028-4507-86C9-9D1C482C68D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A864D8FC-3028-4507-86C9-9D1C482C68D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A864D8FC-3028-4507-86C9-9D1C482C68D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD678AD8-3D29-4DB3-88E0-263A1ACD51F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD678AD8-3D29-4DB3-88E0-263A1ACD51F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD678AD8-3D29-4DB3-88E0-263A1ACD51F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD678AD8-3D29-4DB3-88E0-263A1ACD51F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5F105399-520F-4620-8B96-4AE6D88DB945}
+		SolutionGuid = {86997CFC-9811-4265-92F5-259B00AD336B}
 	EndGlobalSection
 EndGlobal

@@ -7,6 +7,6 @@ namespace Fiap.Aula04.Web.Models
 {
     public enum Combustivel
     {
-        Gasolina,Etanol,Diesel,Flex
+        Etanol,Gasolina,Diesel,Elétrico
     }
 }

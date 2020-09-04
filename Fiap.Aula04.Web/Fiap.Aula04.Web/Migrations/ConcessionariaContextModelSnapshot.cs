@@ -21,7 +21,7 @@ namespace Fiap.Aula04.Web.Migrations
 
             modelBuilder.Entity("Fiap.Aula04.Web.Models.Veiculo", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("VeiculoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -45,7 +45,7 @@ namespace Fiap.Aula04.Web.Migrations
                     b.Property<bool>("Novo")
                         .HasColumnType("bit");
 
-                    b.HasKey("Id");
+                    b.HasKey("VeiculoId");
 
                     b.ToTable("Tbl_Veiculo");
                 });

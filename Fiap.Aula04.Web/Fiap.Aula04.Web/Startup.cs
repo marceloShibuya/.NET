@@ -24,7 +24,8 @@ namespace Fiap.Aula04.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Configurar o contexto para a injeção de dependência, utilizando a configuração do banco de dados
+
+            //Configurar o contexto para a injeção de dependência utilizando a configuração do banco de bados
             services.AddDbContext<ConcessionariaContext>(o => o.UseSqlServer(Configuration.GetConnectionString("conexao")));
 
             services.AddControllersWithViews();

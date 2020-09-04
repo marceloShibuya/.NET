@@ -10,22 +10,24 @@ namespace Fiap.Aula04.Web.Models
     [Table("Tbl_Veiculo")]
     public class Veiculo
     {
-        //Nome da classe + Id : chave primária não precisa da anotação [Key]
+        //Nome da classe + Id: chave primária, não preicsa da anotação [Key]
         [Column("Id")]
-        public int Id { get; set; }
+        public int VeiculoId { get; set; }
 
-        [Required,MaxLength(50)]
+        [Required, MaxLength(50)]
         public string Modelo { get; set; }
 
         [Required]
         public int Ano { get; set; }
 
-        [Column("Dt_Fabricacao")]
+        [Display(Name = "Data de Fabricação"), DataType(DataType.Date), Column("Dt_Fabricacao")]    
         public DateTime DataFabricacao { get; set; }
 
         public bool Novo { get; set; }
 
+        [Display(Name = "Combustível")]
         public Combustivel Combustivel { get; set; }
+
 
     }
 }
