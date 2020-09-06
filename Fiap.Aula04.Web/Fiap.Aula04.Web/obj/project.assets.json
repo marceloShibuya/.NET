@@ -8478,11 +8478,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\55119\\Desktop\\Fiap.Aula04.Web\\Fiap.Aula04.Web\\Fiap.Aula04.Web.csproj",
+      "projectUniqueName": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula04.Web\\Fiap.Aula04.Web\\Fiap.Aula04.Web.csproj",
       "projectName": "Fiap.Aula04.Web",
-      "projectPath": "C:\\Users\\55119\\Desktop\\Fiap.Aula04.Web\\Fiap.Aula04.Web\\Fiap.Aula04.Web.csproj",
+      "projectPath": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula04.Web\\Fiap.Aula04.Web\\Fiap.Aula04.Web.csproj",
       "packagesPath": "C:\\Users\\55119\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\55119\\Desktop\\Fiap.Aula04.Web\\Fiap.Aula04.Web\\obj\\",
+      "outputPath": "C:\\Users\\55119\\Documents\\GitHub\\.NET\\Fiap.Aula04.Web\\Fiap.Aula04.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\55119\\AppData\\Roaming\\NuGet\\NuGet.Config",

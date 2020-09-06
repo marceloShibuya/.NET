@@ -35,6 +35,32 @@ namespace Fiap.Aula04.Web.Controllers
             return RedirectToAction("Cadastrar"); //Redireciona para o método Cadastrar GET
         }
 
+        [HttpGet]
+        public IActionResult Editar(int id)
+        {
+            var veiculo = _context.Veiculos.Find(id);
+            return View(veiculo);
+        }
+        
+        [HttpPost]
+        public IActionResult Editar(Veiculo veiculo)
+        {
+            _context.Veiculos.Update(veiculo);
+            _context.SaveChanges();
+            TempData["msg"] = "Veículo atualizado!";
+            return RedirectToAction("Index");  
+        }
+
+        [HttpPost]
+        public IActionResult Remover(int id)
+        {
+            var veiculo = _context.Veiculos.Find(id);
+            _context.Veiculos.Remove(veiculo);
+            _context.SaveChanges();
+            TempData["msg"] = "Veículo removido!";
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Index()
         {
             //Pesquisar todos os carros 1:10 no vídeo

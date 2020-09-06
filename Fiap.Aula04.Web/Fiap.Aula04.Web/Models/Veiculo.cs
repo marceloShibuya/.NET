@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +12,7 @@ namespace Fiap.Aula04.Web.Models
     public class Veiculo
     {
         //Nome da classe + Id: chave primária, não preicsa da anotação [Key]
-        [Column("Id")]
+        [Column("Id"),HiddenInput]
         public int VeiculoId { get; set; }
 
         [Required, MaxLength(50)]
