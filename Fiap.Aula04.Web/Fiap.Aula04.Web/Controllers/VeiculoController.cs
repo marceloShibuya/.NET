@@ -61,10 +61,24 @@ namespace Fiap.Aula04.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Index()
+        /*
+        [HttpGet]
+        public IActionResult Pesquisar(int ano)
         {
-            //Pesquisar todos os carros 1:10 no vídeo
-            var lista = _context.Veiculos.ToList();
+            var lista = _context.Veiculos.Where(v => v.Ano == ano || ano == 0).OrderBy(v => v.Modelo).ToList();
+            //Retornar para a página Index com a lista filtrada
+            return View("Index", lista); //nome da página, a lista de veículos filtrada
+        }
+        */
+
+        public IActionResult Index(int ano)
+        {
+            //Contar a quantidade de veículos registrado
+            var qtd = _context.Veiculos.Count();
+            //Enviar a informação para a view
+            ViewBag.qtd = qtd;
+            //Pesquisar todos os carros ou pesquisar pelo ano
+            var lista = _context.Veiculos.Where(v => v.Ano == ano || ano == 0).OrderBy(v => v.Modelo).ToList();
             return View(lista);
         }
     }
