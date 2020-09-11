@@ -71,15 +71,19 @@ namespace Fiap.Aula04.Web.Controllers
         }
         */
 
-        public IActionResult Index(int ano)
+        public IActionResult Index(int ano, string modelo)
         {
             //Contar a quantidade de veículos registrado
             var qtd = _context.Veiculos.Count();
             //Enviar a informação para a view
             ViewBag.qtd = qtd;
             //Pesquisar todos os carros ou pesquisar pelo ano
-            var lista = _context.Veiculos.Where(v => v.Ano == ano || ano == 0).OrderBy(v => v.Modelo).ToList();
+            var lista = _context.Veiculos.Where(v => (v.Ano == ano || ano == 0) && 
+                    (v.Modelo.Contains(modelo) || string.IsNullOrEmpty(modelo))).OrderBy(v => v.Modelo).ToList();
+            var listaModelo = _context.Veiculos.Where(m => m.Modelo == modelo) ;
             return View(lista);
         }
+
+
     }
 }

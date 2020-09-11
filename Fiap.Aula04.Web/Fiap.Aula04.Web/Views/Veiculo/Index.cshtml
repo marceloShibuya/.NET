@@ -11,12 +11,13 @@
 <!-- Formulário de pesquisa, por padrão quando utilizamos asp-... o formulário é post -->
 
 <form asp-action="index" method="get" class="form-inline">
+    <input placeholder="Digite o modelo" name="modelo" class="form-control mr-2" type="text" /> 
     <input placeholder="Digite o ano" name="ano" class="form-control mr-2" type="text" />
     <input type="submit" value="Pesquisar" class="btn btn-success" />
 </form>
 
 <div>
-    Resultados encontrados: @Model.Count()
+    Resultados encontrados: @Model.Count() <!-- Count da lista = size() -->
 </div>
 
 <div class="text-right">
