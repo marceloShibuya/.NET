@@ -14,6 +14,25 @@ namespace Fiap.Aula04.Web.Persistencia
 
         public DbSet<Cliente> Clientes { get; set; }
 
+        public DbSet<Placa> Placas { get; set; }
+
+        public DbSet<Endereco> Enderecos { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Configurar a chave composta da tabela associativa
+            modelBuilder.Entity<EnderecoCliente>().HasKey(e => new { e.ClienteId, e.EnderecoId });
+
+            //Configurar o relacionamento da tabela associativa com o cliente
+            modelBuilder.Entity<EnderecoCliente>().HasOne(e => e.Cliente).WithMany(e => e.EnderecoClientes).HasForeignKey(e => e.ClienteId);
+
+            //Configurar o relacionamento da tabela associativa com o endereço
+            modelBuilder.Entity<EnderecoCliente>().HasOne(e => e.Cliente).WithMany(e => e.EnderecoClientes).HasForeignKey(e => e.EnderecoId);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         //Construtor que recebe algumas configurações como a string de conexão do DB
         public ConcessionariaContext(DbContextOptions options) : base (options)
         {

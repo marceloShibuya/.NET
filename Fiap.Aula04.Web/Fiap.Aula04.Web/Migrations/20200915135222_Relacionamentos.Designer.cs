@@ -4,14 +4,16 @@ using Fiap.Aula04.Web.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Fiap.Aula04.Web.Migrations
 {
     [DbContext(typeof(ConcessionariaContext))]
-    partial class ConcessionariaContextModelSnapshot : ModelSnapshot
+    [Migration("20200915135222_Relacionamentos")]
+    partial class Relacionamentos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,7 +120,7 @@ namespace Fiap.Aula04.Web.Migrations
                     b.Property<int>("Ano")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ClienteId")
+                    b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<int>("Combustivel")
@@ -167,7 +169,9 @@ namespace Fiap.Aula04.Web.Migrations
                 {
                     b.HasOne("Fiap.Aula04.Web.Models.Cliente", "Cliente")
                         .WithMany("Veiculos")
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Fiap.Aula04.Web.Models.Placa", "Placa")
                         .WithMany()

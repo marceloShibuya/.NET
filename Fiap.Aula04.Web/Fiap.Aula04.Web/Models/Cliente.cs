@@ -14,6 +14,12 @@ namespace Fiap.Aula04.Web.Models
         [Column("Id")]
         public int ClienteId { get; set; }
 
+        //Relacionamento muitos para um
+        public IList<Veiculo> Veiculos { get; set; }
+
+        //Relacionamento muito para muito
+        public IList<EnderecoCliente> EnderecoClientes { get; set; }
+
         [MaxLength(80), Required]
         public string Nome { get; set; }
 

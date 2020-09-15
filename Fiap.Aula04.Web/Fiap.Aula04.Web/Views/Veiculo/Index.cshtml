@@ -32,6 +32,8 @@
         <th>Data Fabricação</th>
         <th>Novo</th>
         <th>Combustível</th>
+        <th>Placa</th>
+        <th>Cliente</th>
         <th></th>
     </tr>
 
@@ -43,6 +45,9 @@
             <td>@item.DataFabricacao.ToShortDateString()</td>
             <td>@(item.Novo ? "Sim" : "Não")</td>
             <td>@item.Combustivel</td>
+            <td>@item.Placa?.Numero</td>
+            <td>@item.Cliente?.Nome</td>
+            <!-- ? valida se exise um objeto antes de acessar a propriedade -->
             <td>
                 <a asp-action="editar" asp-route-id="@item.VeiculoId" class="btn btn-sm btn-outline-dark">Editar</a>
                 <button onclick="veiculoId.value = @item.VeiculoId" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">

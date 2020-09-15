@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Patterns;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,8 +13,18 @@ namespace Fiap.Aula04.Web.Models
     public class Veiculo
     {
         //Nome da classe + Id: chave primária, não preicsa da anotação [Key]
-        [Column("Id"),HiddenInput]
+        [Column("Id"), HiddenInput]
         public int VeiculoId { get; set; }
+
+        //Relacionamento um para um
+        public Placa Placa { get; set; }
+
+        //Mapear a FK do relacionamento
+        public int PlacaId { get; set; }
+
+        //Relacionamento muito para um
+        public Cliente Cliente { get; set; }
+        public int? ClienteId { get; set; }
 
         [Required, MaxLength(50)]
         public string Modelo { get; set; }
