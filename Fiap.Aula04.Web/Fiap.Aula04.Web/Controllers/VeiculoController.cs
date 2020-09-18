@@ -25,12 +25,17 @@ namespace Fiap.Aula04.Web.Controllers
         [HttpGet] //http://localhost:50461/veiculo/cadastrar
         public IActionResult Cadastrar()
         {
+            CarregarClientes();
+            return View(); //Abre a tela -> /View/Veiculo/Cadastrar.cshtml
+        }
+
+        private void CarregarClientes()
+        {
             //Pesquisar todos os clientes
             var lista = _context.Clientes.ToList();
             //Enviar os clientes para preencher o select
-                                           //lista, valor da option (PK), texto da option
+            //lista, valor da option (PK), texto da option
             ViewBag.clientes = new SelectList(lista, "ClienteId", "Nome"); //ClienteID e Nome vêm da Model Cliente
-            return View(); //Abre a tela -> /View/Veiculo/Cadastrar.cshtml
         }
 
         [HttpPost]
@@ -45,6 +50,7 @@ namespace Fiap.Aula04.Web.Controllers
         [HttpGet]
         public IActionResult Editar(int id)
         {
+            CarregarClientes();
             var veiculo = _context.Veiculos.Include(v => v.Cliente).Include(v => v.Placa).Where(v => v.VeiculoId == id).FirstOrDefault();
             return View(veiculo); //envia o veículo para a view
         }
@@ -78,20 +84,32 @@ namespace Fiap.Aula04.Web.Controllers
         }
         */
 
-        public IActionResult Index(int ano, string modelo)
+        public IActionResult Index(int ano, string modelo, int id)
         {
             //Contar a quantidade de veículos registrado
             var qtd = _context.Veiculos.Count();
             //Enviar a informação para a view
             ViewBag.qtd = qtd;
+
+            //Enviar o select list para preencher o select de clientes
+            var clientes = _context.Clientes
+                .Where(c => c.Veiculos != null) // pesquisa somente os clientes que possuem veículo
+                .ToList();
+            //Enviar os clientes para preencher o select
+            //clientes, valor da option (PK), texto da option
+            ViewBag.clientes = new SelectList(clientes, "ClienteId", "Nome"); //ClienteID e Nome vêm da Model Cliente
+
             //Pesquisar todos os carros ou pesquisar pelo ano
-            var lista = _context.Veiculos.Where(v => (v.Ano == ano || ano == 0) && 
-                    (v.Modelo.Contains(modelo) || string.IsNullOrEmpty(modelo)))
+            var lista = _context.Veiculos
+                .Where(v => (v.Ano == ano || ano == 0) 
+                    && (v.Modelo.Contains(modelo) || string.IsNullOrEmpty(modelo)))
+                    //&& (v.ClienteId == cliente || cliente == 0))
                 .OrderBy(v => v.Modelo)
                 .Include(v => v.Placa) //inclui o relacionamento com a placa na pesquisa
                 .Include(v => v.Cliente) //inclui o relacionamento com o cliente na pesquisa
                 .ToList();
             var listaModelo = _context.Veiculos.Where(m => m.Modelo == modelo) ;
+          
             return View(lista); //enviar a lista de veiculo para a view
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,7 @@ namespace Fiap.Aula04.Web.Models
     [Table("Tbl_Placa")]
     public class Placa
     {
-        [Column("Id")]
+        [Column("Id"), HiddenInput]
         public int PlacaId { get; set; }
 
         [Required, MaxLength(8), Display(Name = "Número da placa")]

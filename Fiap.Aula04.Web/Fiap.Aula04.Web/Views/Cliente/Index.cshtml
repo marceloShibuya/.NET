@@ -27,12 +27,17 @@
             <td>@item.Nome</td>
             <td>@item.DataNascimento.ToShortDateString()</td>
             <td>@(item.Pcd ? "Sim" : "Não")</td>
-            <td></td>
+            <td>
+                <a asp-action="detalhes" class="btn btn-sm btn-outline-info" asp-route-id="@item.ClienteId">Detalhes</a>
+            </td>
         </tr>
     }
 
 </table>
 
+
+
+<h1>Cadastro de Cliente</h1>
 
 <form asp-action="cadastrar">
     <div class="form-group">

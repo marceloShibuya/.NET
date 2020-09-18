@@ -1,4 +1,4 @@
-﻿@model List<Veiculo>
+﻿@model ICollection<Veiculo>
 
 @{
     ViewData["Title"] = "Veículos";
@@ -13,6 +13,9 @@
 <form asp-action="index" method="get" class="form-inline">
     <input placeholder="Digite o modelo" name="modelo" class="form-control mr-2" type="text" /> 
     <input placeholder="Digite o ano" name="ano" class="form-control mr-2" type="text" />
+    <select name="cliente" class="form-control mr-2" asp-items="@ViewBag.clientes" > 
+        <option>Cliente</option>
+    </select>
     <input type="submit" value="Pesquisar" class="btn btn-success" />
 </form>
 

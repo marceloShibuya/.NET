@@ -22,7 +22,7 @@ namespace Fiap.Aula04.Web.Models
         //Mapear a FK do relacionamento
         public int PlacaId { get; set; }
 
-        //Relacionamento muito para um
+        //Relacionamento muito para um, ? -> opcional caso
         public Cliente Cliente { get; set; }
         public int? ClienteId { get; set; }
 
