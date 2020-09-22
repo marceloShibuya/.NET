@@ -26,6 +26,9 @@ namespace Fiap.Aula04.Web.Models
         public Cliente Cliente { get; set; }
         public int? ClienteId { get; set; }
 
+        //Relacionamento muito para muito
+        public IList<TestDrive> TestDrives { get; set; }
+
         [Required, MaxLength(50)]
         public string Modelo { get; set; }
 

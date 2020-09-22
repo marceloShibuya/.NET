@@ -18,9 +18,20 @@ namespace Fiap.Aula04.Web.Persistencia
 
         public DbSet<Endereco> Enderecos { get; set; }
 
+        public DbSet<TestDrive> TestDrives { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Configurar a chave composta da tabela TestDrive
+            modelBuilder.Entity<TestDrive>().HasKey(t => new { t.ClienteId, t.VeiculoId });
+
+            //Configurar o relacionamento da tabela associativa com o cliente
+            modelBuilder.Entity<TestDrive>().HasOne(t => t.Cliente).WithMany(t => t.TestDrives).HasForeignKey(t => t.ClienteId);
+
+            //Configurar o relacionamento da tabela associativa com o Veiculo
+            modelBuilder.Entity<TestDrive>().HasOne(t => t.Veiculo).WithMany(t => t.TestDrives).HasForeignKey(t => t.VeiculoId);
+
             //Configurar a chave composta da tabela associativa
             modelBuilder.Entity<EnderecoCliente>().HasKey(e => new { e.ClienteId, e.EnderecoId });
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +12,7 @@ namespace Fiap.Aula04.Web.Models
     [Table("Tbl_Cliente")]
     public class Cliente
     {
-        [Column("Id")]
+        [Column("Id"), HiddenInput]
         public int ClienteId { get; set; }
 
         //Relacionamento muitos para um
@@ -19,6 +20,9 @@ namespace Fiap.Aula04.Web.Models
 
         //Relacionamento muito para muito
         public IList<EnderecoCliente> EnderecoClientes { get; set; }
+
+        //Relacionamento muito para muito
+        public IList<TestDrive> TestDrives { get; set; }
 
         [MaxLength(80), Required]
         public string Nome { get; set; }

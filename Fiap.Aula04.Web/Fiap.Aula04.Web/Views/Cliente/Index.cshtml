@@ -29,6 +29,7 @@
             <td>@(item.Pcd ? "Sim" : "Não")</td>
             <td>
                 <a asp-action="detalhes" class="btn btn-sm btn-outline-info" asp-route-id="@item.ClienteId">Detalhes</a>
+                <a asp-action="teste" class="btn btn-sm btn-outline-primary" asp-route-id="@item.ClienteId">Test Drive</a>
             </td>
         </tr>
     }

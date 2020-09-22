@@ -84,7 +84,7 @@ namespace Fiap.Aula04.Web.Controllers
         }
         */
 
-        public IActionResult Index(int ano, string modelo, int id)
+        public IActionResult Index(int ano, string modelo, int cliente)
         {
             //Contar a quantidade de veículos registrado
             var qtd = _context.Veiculos.Count();
@@ -93,8 +93,9 @@ namespace Fiap.Aula04.Web.Controllers
 
             //Enviar o select list para preencher o select de clientes
             var clientes = _context.Clientes
-                .Where(c => c.Veiculos != null) // pesquisa somente os clientes que possuem veículo
+                .Where(c => c.Veiculos.Any()) // pesquisa somente os clientes que possuem veículo
                 .ToList();
+
             //Enviar os clientes para preencher o select
             //clientes, valor da option (PK), texto da option
             ViewBag.clientes = new SelectList(clientes, "ClienteId", "Nome"); //ClienteID e Nome vêm da Model Cliente
@@ -102,8 +103,8 @@ namespace Fiap.Aula04.Web.Controllers
             //Pesquisar todos os carros ou pesquisar pelo ano
             var lista = _context.Veiculos
                 .Where(v => (v.Ano == ano || ano == 0) 
-                    && (v.Modelo.Contains(modelo) || string.IsNullOrEmpty(modelo)))
-                    //&& (v.ClienteId == cliente || cliente == 0))
+                    && (v.Modelo.Contains(modelo) || string.IsNullOrEmpty(modelo))
+                    && (v.ClienteId == cliente || cliente == 0))
                 .OrderBy(v => v.Modelo)
                 .Include(v => v.Placa) //inclui o relacionamento com a placa na pesquisa
                 .Include(v => v.Cliente) //inclui o relacionamento com o cliente na pesquisa

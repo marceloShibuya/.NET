@@ -1,0 +1,46 @@
+﻿@model Cliente
+
+@{
+    ViewData["Title"] = "Teste";
+}
+
+<h1>@Model.Nome</h1>
+
+<msg mensagem="@TempData["msg"]"></msg>
+
+<form asp-action="teste">
+
+    <input asp-for="ClienteId"/>
+
+    <div class="form-group">
+        <label>Veiculo</label>
+        <select class="form-control" name="VeiculoId" asp-items="@ViewBag.veiculos">
+            <option>Selecione</option>
+        </select>
+    </div>
+    <input type="submit" value="Cadastrar" class="btn btn-primary"/>
+    <a asp-action="index" class="btn btn-danger">Voltar</a>
+</form>
+
+<hr />
+
+<h3>Veículo de Test Drive</h3>
+
+<table class="table table-striped">
+    <tr>
+        <th>Modelo</th>
+        <th>Ano</th>
+        <th>Combustível</th>
+    </tr>
+    @foreach(var item in ViewBag.lista)
+    {
+    <tr>
+        <td>@item.Modelo</td>
+        <td>@item.Ano</td>
+        <td>@item.Combustivel</td>
+    </tr>
+    }
+
+
+</table>
+

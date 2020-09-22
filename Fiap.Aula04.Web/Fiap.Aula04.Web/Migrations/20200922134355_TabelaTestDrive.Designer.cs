@@ -4,14 +4,16 @@ using Fiap.Aula04.Web.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Fiap.Aula04.Web.Migrations
 {
     [DbContext(typeof(ConcessionariaContext))]
-    partial class ConcessionariaContextModelSnapshot : ModelSnapshot
+    [Migration("20200922134355_TabelaTestDrive")]
+    partial class TabelaTestDrive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
