@@ -154,6 +154,9 @@ namespace Fiap.Aula04.Web.Migrations
                     b.Property<int>("PlacaId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("TestDrive")
+                        .HasColumnType("bit");
+
                     b.HasKey("VeiculoId");
 
                     b.HasIndex("ClienteId");

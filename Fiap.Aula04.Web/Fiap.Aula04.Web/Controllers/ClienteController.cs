@@ -47,11 +47,13 @@ namespace Fiap.Aula04.Web.Controllers
             //Enviar a lista de test drives
             ViewBag.lista = veiculos;
 
-            //Pesquisar todos os veículos
-            var lista = _context.Veiculos.ToList();
+            //Pesquisar todos os veículos que permite o test drive
+            var lista = _context.Veiculos
+                .Where(v => v.TestDrive) //pesquisa somente os TestDrive == true
+                .ToList();
 
             //Filtrar a lista somente com os veículos que o cliente ainda não fez o test drive
-            var listaFiltrada = lista.Where(c => veiculos.Any(c1 => c1.VeiculoId == c.VeiculoId));
+            var listaFiltrada = lista.Where(c => !veiculos.Any(c1 => c1.VeiculoId == c.VeiculoId));
 
             //Enviar o select list de veículos para o select
             ViewBag.veiculos = new SelectList(listaFiltrada, "VeiculoId", "Modelo");

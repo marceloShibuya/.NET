@@ -37,6 +37,7 @@
         <th>Combustível</th>
         <th>Placa</th>
         <th>Cliente</th>
+        <th>Teste Drive</th>
         <th></th>
     </tr>
 
@@ -50,12 +51,14 @@
             <td>@item.Combustivel</td>
             <td>@item.Placa?.Numero</td>
             <td>@item.Cliente?.Nome</td>
+            <td>@(item.TestDrive ? "Sim" : "Não")</td>
             <!-- ? valida se exise um objeto antes de acessar a propriedade -->
             <td>
                 <a asp-action="editar" asp-route-id="@item.VeiculoId" class="btn btn-sm btn-outline-dark">Editar</a>
                 <button onclick="veiculoId.value = @item.VeiculoId" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
                     Excluir
                 </button>
+                <a asp-action="exibirCliente" asp-route-id="@item.VeiculoId" class="btn btn-sm btn-outline-success">Test Drive</a>
             </td>
         </tr>
     }

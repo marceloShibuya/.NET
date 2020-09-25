@@ -20,6 +20,23 @@ namespace Fiap.Aula04.Web.Controllers
             _context = context;
         }
 
+        //Método que recebe o id do veículo para exibir os clientes (test drive)
+        public IActionResult ExibirCliente(int id)
+        {
+            //Lista de clientes
+            var clientes = _context.TestDrives
+                .Where(v => v.VeiculoId == id)
+                .Select(v => v.Cliente)
+                .ToList();
+
+            ViewBag.clientes = clientes;
+            
+            //O veículo
+            var veiculo = _context.Veiculos.Find(id);
+
+            return View(veiculo);
+        }
+
         //Implementar o CRUD com banco de dados!
 
         [HttpGet] //http://localhost:50461/veiculo/cadastrar

@@ -22,13 +22,18 @@
     <input asp-for="Novo" />
     <label asp-for="Novo"></label>
 </div>
+<div class="form-group">
+    <input asp-for="TestDrive"/>
+    <label asp-for="TestDrive"></label>
+</div>
+
 
 <hr />
 
 <!-- cadastrar a placa do veiculo -->
 <h4>Placa</h4>
 
-<input asp-for="Placa.PlacaId"/>
+<input asp-for="Placa.PlacaId" />
 
 <div class="form-group">
     <label asp-for="Placa.Numero"></label>
@@ -44,7 +49,8 @@
 <!-- Lista de clientes para cadastrar com o veículo -->
 <div class="form-group">
     <label asp-for="Cliente"></label>
-    <select asp-for="ClienteId" class="form-control" asp-items="@ViewBag.clientes" > <!-- ViewBag.clientes enviado através do VeiculoControler no método Cadastrar[Get] -->
+    <select asp-for="ClienteId" class="form-control" asp-items="@ViewBag.clientes">
+        <!-- ViewBag.clientes enviado através do VeiculoControler no método Cadastrar[Get] -->
         <option>Selecione</option>
     </select>
 </div>

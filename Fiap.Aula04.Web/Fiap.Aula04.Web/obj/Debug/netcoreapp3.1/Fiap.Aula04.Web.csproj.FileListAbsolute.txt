@@ -305,3 +305,4 @@ C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula04.Web\Fiap.Aula04.Web\obj\Debug\n
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula04.Web\Fiap.Aula04.Web\obj\Debug\netcoreapp3.1\Razor\Views\Cliente\Index.cshtml.g.cs
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula04.Web\Fiap.Aula04.Web\obj\Debug\netcoreapp3.1\Razor\Views\Cliente\Detalhes.cshtml.g.cs
 C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula04.Web\Fiap.Aula04.Web\obj\Debug\netcoreapp3.1\Razor\Views\Cliente\Teste.cshtml.g.cs
+C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula04.Web\Fiap.Aula04.Web\obj\Debug\netcoreapp3.1\Razor\Views\Veiculo\ExibirCliente.cshtml.g.cs

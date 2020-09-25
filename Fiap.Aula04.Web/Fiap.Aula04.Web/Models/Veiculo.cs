@@ -40,6 +40,8 @@ namespace Fiap.Aula04.Web.Models
 
         public bool Novo { get; set; }
 
+        public bool TestDrive { get; set; }
+
         [Display(Name = "Combustível")]
         public Combustivel Combustivel { get; set; }
 

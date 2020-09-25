@@ -1,0 +1,33 @@
+﻿@model Veiculo
+
+@{
+    ViewData["Title"] = "ExibirCliente";
+}
+
+<div class="text-right">
+    <a asp-action="index">Voltar</a>
+</div>
+
+
+<h1>@Model.Modelo</h1>
+<p><i>@Model.Combustivel</i></p>
+
+<h2>Clientes</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Nome</th>
+        <th>Data Nascimento</th>
+        <th>Pcd</th>
+    </tr>
+
+    @foreach(var item in ViewBag.clientes)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.DataNascimento.ToShortDateString()</td>
+            <td>@(item.Pcd ? "Sim" : "Não")</td>
+        </tr>
+    }
+</table>
+
