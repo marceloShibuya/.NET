@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fiap.Aula04.Web.Models;
 using Fiap.Aula04.Web.Persistencia;
+using Fiap.Aula04.Web.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,11 +15,14 @@ namespace Fiap.Aula04.Web.Controllers
     {
         private ConcessionariaContext _context;
 
+        private IVeiculoRepository _veiculoRepository;
+
         //Injeção de dependência pelo construtor
-        public VeiculoController(ConcessionariaContext context) 
+        public VeiculoController(ConcessionariaContext context, IVeiculoRepository veiculoRepository)
         {
             _context = context;
-        }
+            _veiculoRepository = veiculoRepository;
+    }
 
         //Método que recebe o id do veículo para exibir os clientes (test drive)
         public IActionResult ExibirCliente(int id)
@@ -30,9 +34,9 @@ namespace Fiap.Aula04.Web.Controllers
                 .ToList();
 
             ViewBag.clientes = clientes;
-            
+
             //O veículo
-            var veiculo = _context.Veiculos.Find(id);
+            var veiculo = _veiculoRepository.Pesquisar(id);
 
             return View(veiculo);
         }
@@ -58,8 +62,10 @@ namespace Fiap.Aula04.Web.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Veiculo veiculo)
         {
-            _context.Veiculos.Add(veiculo);
-            _context.SaveChanges();
+            //Cadastrar no banco
+            _veiculoRepository.Cadastrar(veiculo);
+            //Commit
+            _veiculoRepository.Salvar();
             TempData["msg"] = "Cadastrado com sucesso!";
             return RedirectToAction("Cadastrar"); //Redireciona para o método Cadastrar GET
         }
@@ -68,7 +74,8 @@ namespace Fiap.Aula04.Web.Controllers
         public IActionResult Editar(int id)
         {
             CarregarClientes();
-            var veiculo = _context.Veiculos.Include(v => v.Cliente).Include(v => v.Placa).Where(v => v.VeiculoId == id).FirstOrDefault();
+            //Pesquisa o veículo pelo código
+            var veiculo = _veiculoRepository.Pesquisar(id);
             return View(veiculo); //envia o veículo para a view
         }
         
@@ -84,10 +91,13 @@ namespace Fiap.Aula04.Web.Controllers
         [HttpPost]
         public IActionResult Remover(int id)
         {
-            var veiculo = _context.Veiculos.Find(id);
-            _context.Veiculos.Remove(veiculo);
-            _context.SaveChanges();
+            //Cadastrar no banco
+            _veiculoRepository.Remover(id);
+            //Commit
+            _veiculoRepository.Salvar();
+            //Mensagem de sucesso
             TempData["msg"] = "Veículo removido!";
+            //Redirect
             return RedirectToAction("Index");
         }
 
@@ -118,15 +128,9 @@ namespace Fiap.Aula04.Web.Controllers
             ViewBag.clientes = new SelectList(clientes, "ClienteId", "Nome"); //ClienteID e Nome vêm da Model Cliente
 
             //Pesquisar todos os carros ou pesquisar pelo ano
-            var lista = _context.Veiculos
-                .Where(v => (v.Ano == ano || ano == 0) 
+            var lista = _veiculoRepository.BuscarPor(v => (v.Ano == ano || ano == 0)
                     && (v.Modelo.Contains(modelo) || string.IsNullOrEmpty(modelo))
-                    && (v.ClienteId == cliente || cliente == 0))
-                .OrderBy(v => v.Modelo)
-                .Include(v => v.Placa) //inclui o relacionamento com a placa na pesquisa
-                .Include(v => v.Cliente) //inclui o relacionamento com o cliente na pesquisa
-                .ToList();
-            var listaModelo = _context.Veiculos.Where(m => m.Modelo == modelo) ;
+                    && (v.ClienteId == cliente || cliente == 0));
           
             return View(lista); //enviar a lista de veiculo para a view
         }

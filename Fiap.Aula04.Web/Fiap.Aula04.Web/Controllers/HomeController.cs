@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Fiap.Aula04.Web.Models;
+using Fiap.Aula04.Web.Persistencia;
 
 namespace Fiap.Aula04.Web.Controllers
 {
@@ -13,13 +14,19 @@ namespace Fiap.Aula04.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private ConcessionariaContext _context;
+
+        public HomeController(ILogger<HomeController> logger, ConcessionariaContext contex)
         {
+            _context = contex;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            ViewBag.clientes = _context.Clientes.Count();
+            ViewBag.veiculos = _context.Veiculos.Count();
+            ViewBag.tests = _context.TestDrives.Count();
             return View();
         }
 

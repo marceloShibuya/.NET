@@ -24,7 +24,7 @@
 </div>
 
 <div class="text-right">
-    <a asp-action="cadastrar" class="btn btn-outline-primary mb-2">Cadastrar</a>
+    <a asp-action="cadastrar"><i class="fa fa-2x fa-plus-square"></i> </a>
 </div>
 
 <table class="table table-striped">
@@ -54,11 +54,13 @@
             <td>@(item.TestDrive ? "Sim" : "Não")</td>
             <!-- ? valida se exise um objeto antes de acessar a propriedade -->
             <td>
-                <a asp-action="editar" asp-route-id="@item.VeiculoId" class="btn btn-sm btn-outline-dark">Editar</a>
+                <a asp-action="editar"  class="btn btn-sm btn-outline-dark" 
+                   asp-route-id="@item.VeiculoId"><i class="fa fa-pen"></i></a>
                 <button onclick="veiculoId.value = @item.VeiculoId" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
-                    Excluir
+                    <i class="fa fa-trash"></i>
                 </button>
-                <a asp-action="exibirCliente" asp-route-id="@item.VeiculoId" class="btn btn-sm btn-outline-success">Test Drive</a>
+                <a asp-action="exibirCliente" asp-route-id="@item.VeiculoId" 
+                   class="btn btn-group-sm btn-outline-success"><i class="fa fa-car"></i>Test Drive</a>
             </td>
         </tr>
     }
