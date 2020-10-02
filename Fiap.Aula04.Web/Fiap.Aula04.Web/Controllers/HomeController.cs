@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Fiap.Aula04.Web.Models;
 using Fiap.Aula04.Web.Persistencia;
+using Fiap.Aula04.Web.ViewModels;
 
 namespace Fiap.Aula04.Web.Controllers
 {
@@ -24,10 +25,13 @@ namespace Fiap.Aula04.Web.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.clientes = _context.Clientes.Count();
-            ViewBag.veiculos = _context.Veiculos.Count();
-            ViewBag.tests = _context.TestDrives.Count();
-            return View();
+            var model = new HomeViewModel()
+            {
+                Clientes = _context.Clientes.Count(),
+                Veiculos = _context.Veiculos.Count(),
+                TestDrives = _context.TestDrives.Count()
+            };
+            return View(model);
         }
 
         public IActionResult Privacy()

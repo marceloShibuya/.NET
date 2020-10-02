@@ -9,6 +9,8 @@ namespace Fiap.Aula04.Web.Repositories
 {
     public interface IVeiculoRepository
     {
+        long Contar();
+
         void Cadastrar(Veiculo veiculo);
 
         void Atualizar(Veiculo veiculo);

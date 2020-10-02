@@ -26,8 +26,15 @@ using Fiap.Aula04.Web.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula04.Web\Fiap.Aula04.Web\Views\_ViewImports.cshtml"
+using Fiap.Aula04.Web.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d71b4f10bd04b94f5f3df652c1598cf9b5aaeb70", @"/Views/Veiculo/Cadastrar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0e1796cdf9537dbf60709d744341a7ebc71f8a8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2022e5376588977a930fdfc80ea93b3543286360", @"/Views/_ViewImports.cshtml")]
     public class Views_Veiculo_Cadastrar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Veiculo>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "_Formulario", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -72,7 +79,7 @@ using Fiap.Aula04.Web.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Cadastrar</h1>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("msg", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d71b4f10bd04b94f5f3df652c1598cf9b5aaeb705224", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("msg", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d71b4f10bd04b94f5f3df652c1598cf9b5aaeb705434", async() => {
             }
             );
             __Fiap_Aula04_Web_TagHelpers_MsgTagHelper = CreateTagHelper<global::Fiap.Aula04.Web.TagHelpers.MsgTagHelper>();
@@ -96,9 +103,9 @@ using Fiap.Aula04.Web.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d71b4f10bd04b94f5f3df652c1598cf9b5aaeb706748", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d71b4f10bd04b94f5f3df652c1598cf9b5aaeb706958", async() => {
                 WriteLiteral("\r\n\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d71b4f10bd04b94f5f3df652c1598cf9b5aaeb707014", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d71b4f10bd04b94f5f3df652c1598cf9b5aaeb707224", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -113,7 +120,7 @@ using Fiap.Aula04.Web.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n    <input type=\"submit\" value=\"Cadastrar\" class=\"btn btn-outline-primary\" />\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d71b4f10bd04b94f5f3df652c1598cf9b5aaeb708285", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d71b4f10bd04b94f5f3df652c1598cf9b5aaeb708495", async() => {
                     WriteLiteral("Veículos");
                 }
                 );

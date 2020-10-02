@@ -34,6 +34,11 @@ namespace Fiap.Aula04.Web.Repositories
             _context.Veiculos.Add(veiculo);
         }
 
+        public long Contar()
+        {
+            return _context.Veiculos.Count();
+        }
+
         public List<Veiculo> Listar()
         {
             return _context.Veiculos.Include(v => v.Placa).Include(v => v.Cliente).ToList();

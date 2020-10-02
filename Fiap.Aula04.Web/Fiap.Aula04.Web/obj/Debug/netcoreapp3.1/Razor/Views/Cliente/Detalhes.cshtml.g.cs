@@ -26,8 +26,15 @@ using Fiap.Aula04.Web.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula04.Web\Fiap.Aula04.Web\Views\_ViewImports.cshtml"
+using Fiap.Aula04.Web.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"541f549e3b98b2281cf09e148f782e6b0b6e8133", @"/Views/Cliente/Detalhes.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0e1796cdf9537dbf60709d744341a7ebc71f8a8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2022e5376588977a930fdfc80ea93b3543286360", @"/Views/_ViewImports.cshtml")]
     public class Views_Cliente_Detalhes : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Cliente>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -155,7 +162,7 @@ Write(Model.Nome);
 #line hidden
 #nullable disable
             WriteLiteral("</div>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "541f549e3b98b2281cf09e148f782e6b0b6e81337694", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "541f549e3b98b2281cf09e148f782e6b0b6e81337904", async() => {
                 WriteLiteral("Voltar");
             }
             );

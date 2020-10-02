@@ -26,8 +26,15 @@ using Fiap.Aula04.Web.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\55119\Documents\GitHub\.NET\Fiap.Aula04.Web\Fiap.Aula04.Web\Views\_ViewImports.cshtml"
+using Fiap.Aula04.Web.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"946d88bc085d5fc33c5909963835e1d33888c444", @"/Views/Veiculo/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0e1796cdf9537dbf60709d744341a7ebc71f8a8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2022e5376588977a930fdfc80ea93b3543286360", @"/Views/_ViewImports.cshtml")]
     public class Views_Veiculo_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ICollection<Veiculo>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "cliente", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -88,7 +95,7 @@ using Fiap.Aula04.Web.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</b></h1>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("msg", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c4447907", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("msg", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c4448117", async() => {
             }
             );
             __Fiap_Aula04_Web_TagHelpers_MsgTagHelper = CreateTagHelper<global::Fiap.Aula04.Web.TagHelpers.MsgTagHelper>();
@@ -112,11 +119,11 @@ using Fiap.Aula04.Web.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n<!-- Formulário de pesquisa, por padrão quando utilizamos asp-... o formulário é post -->\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c4449524", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c4449734", async() => {
                 WriteLiteral("\r\n    <input placeholder=\"Digite o modelo\" name=\"modelo\" class=\"form-control mr-2\" type=\"text\" /> \r\n    <input placeholder=\"Digite o ano\" name=\"ano\" class=\"form-control mr-2\" type=\"text\" />\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c4449995", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44410205", async() => {
                     WriteLiteral(" \r\n        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44410272", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44410483", async() => {
                         WriteLiteral("Cliente");
                     }
                     );
@@ -180,7 +187,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.clientes;
 #line hidden
 #nullable disable
             WriteLiteral(" <!-- Count da lista = size() -->\r\n</div>\r\n\r\n<div class=\"text-right\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44414786", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44414997", async() => {
                 WriteLiteral("<i class=\"fa fa-2x fa-plus-square\"></i> ");
             }
             );
@@ -286,7 +293,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.clientes;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n            <!-- ? valida se exise um objeto antes de acessar a propriedade -->\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44418867", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44419078", async() => {
                 WriteLiteral("<i class=\"fa fa-pen\"></i>");
             }
             );
@@ -330,7 +337,7 @@ WriteAttributeValue(" ", 1960, item.VeiculoId, 1961, 15, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" type=\"button\" class=\"btn btn-sm btn-danger\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n                    <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44421885", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44422096", async() => {
                 WriteLiteral("<i class=\"fa fa-car\"></i>Test Drive");
             }
             );
@@ -390,7 +397,7 @@ WriteAttributeValue(" ", 1960, item.VeiculoId, 1961, 15, false);
                     Definir um id para o campo oculto, que será utilizado no onclick do botao do modal 
                     como foi definicido o asp-action ""remover"" este deve ser o nome do método no C");
             WriteLiteral("ontroller\r\n                    Public IactionResult Remover passando o parâmetro name=\"id\" que também será recebido no Controller -->\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44425683", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "946d88bc085d5fc33c5909963835e1d33888c44425894", async() => {
                 WriteLiteral(@"
                     <input type=""hidden"" name=""id"" id=""veiculoId"" />
                     <button type=""button"" class=""btn btn-secondary"" data-dismiss=""modal"">Close</button>

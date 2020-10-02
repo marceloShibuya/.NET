@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fiap.Aula04.Web.Models;
 using Fiap.Aula04.Web.Persistencia;
+using Fiap.Aula04.Web.Repositories;
+using Fiap.Aula04.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +16,15 @@ namespace Fiap.Aula04.Web.Controllers
     {
         private ConcessionariaContext _context;
 
-        public ClienteController(ConcessionariaContext context)
+        private IClienteRepository _clienteRepository;
+
+        private IVeiculoRepository _veiculoRepository;
+
+        public ClienteController(ConcessionariaContext context, IClienteRepository clienteRepository, IVeiculoRepository veiculoRepository)
         {
             _context = context;
+            _clienteRepository = clienteRepository;
+            _veiculoRepository = veiculoRepository;
         }
 
 
@@ -45,38 +53,43 @@ namespace Fiap.Aula04.Web.Controllers
                 .ToList();
 
             //Enviar a lista de test drives
-            ViewBag.lista = veiculos;
+            //ViewBag.lista = veiculos;
 
             //Pesquisar todos os veículos que permite o test drive
-            var lista = _context.Veiculos
-                .Where(v => v.TestDrive) //pesquisa somente os TestDrive == true
-                .ToList();
+            var lista = _veiculoRepository.BuscarPor(v => v.TestDrive); //pesquisa somente os TestDrive == true
 
             //Filtrar a lista somente com os veículos que o cliente ainda não fez o test drive
             var listaFiltrada = lista.Where(c => !veiculos.Any(c1 => c1.VeiculoId == c.VeiculoId));
 
             //Enviar o select list de veículos para o select
-            ViewBag.veiculos = new SelectList(listaFiltrada, "VeiculoId", "Modelo");
+            //ViewBag.veiculos = new SelectList(listaFiltrada, "VeiculoId", "Modelo");
 
             //Pesquisar o cliente por id
-            var cliente = _context.Clientes.Find(id);
+            var cliente = _clienteRepository.Pesquisar(id);
+
+            var model = new ClienteTestDriveModel()
+            {
+                Veiculos = veiculos,
+                VeiculosTestDrive = new SelectList(listaFiltrada, "VeiculoId", "Modelo"),
+                Cliente = cliente
+            };
 
             //Retornar o cliente para a view
-            return View(cliente);
+            return View(model);
         }
 
         [HttpPost]
         public IActionResult Cadastrar(Cliente cliente)
         {
-            _context.Clientes.Add(cliente);
-            _context.SaveChanges();
+            _clienteRepository.Cadastrar(cliente);
+            _clienteRepository.Salvar();
             TempData["msg"] = "Cliente cadastrado!";
             return RedirectToAction("Index");
         }
 
         public IActionResult Index(string nome)
         {
-            var lista = _context.Clientes.Where(c => c.Nome.Contains(nome)|| string.IsNullOrEmpty(nome)).ToList();
+            var lista = _clienteRepository.PesquisarPor(c => c.Nome.Contains(nome)|| string.IsNullOrEmpty(nome)).ToList();
             ViewBag.clientes = lista; //envia a lista de clientes para a view
             return View();
         }
@@ -86,10 +99,8 @@ namespace Fiap.Aula04.Web.Controllers
         public IActionResult Detalhes(int id)
         {
             //Pesquisar o cliente, carregando os veículos
-            var cliente = _context.Clientes.Include(c => c.Veiculos)
-                .ThenInclude(c => c.Placa) // Carrega o relacionamento do veículo com a placa
-                .Where(c => c.ClienteId == id)
-                .FirstOrDefault(); //retorna o primeiro resultado ou null
+            var cliente = _clienteRepository.PesquisarComVeiculos(id);
+
             //Retorna o cliente para a view
             return View(cliente);
         }

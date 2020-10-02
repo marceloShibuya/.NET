@@ -1,20 +1,20 @@
-﻿@model Cliente
+﻿@model ClienteTestDriveModel
 
 @{
     ViewData["Title"] = "Teste";
 }
 
-<h1>@Model.Nome</h1>
+<h1>@Model.Cliente.Nome</h1>
 
 <msg mensagem="@TempData["msg"]"></msg>
 
 <form asp-action="teste">
 
-    <input asp-for="ClienteId"/>
+    <input name="clienteId" value="@Model.Cliente.ClienteId" type="hidden"/>
 
     <div class="form-group">
         <label>Veiculo</label>
-        <select class="form-control" name="VeiculoId" asp-items="@ViewBag.veiculos">
+        <select class="form-control" name="VeiculoId" asp-items="@Model.VeiculosTestDrive">
             <option>Selecione</option>
         </select>
     </div>
@@ -32,7 +32,7 @@
         <th>Ano</th>
         <th>Combustível</th>
     </tr>
-    @foreach(var item in ViewBag.lista)
+    @foreach(var item in Model.Veiculos)
     {
     <tr>
         <td>@item.Modelo</td>

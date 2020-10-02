@@ -17,11 +17,14 @@ namespace Fiap.Aula04.Web.Controllers
 
         private IVeiculoRepository _veiculoRepository;
 
+        private IClienteRepository _clienteRepository;
+
         //Injeção de dependência pelo construtor
-        public VeiculoController(ConcessionariaContext context, IVeiculoRepository veiculoRepository)
+        public VeiculoController(ConcessionariaContext context, IVeiculoRepository veiculoRepository, IClienteRepository clienteRepository)
         {
             _context = context;
             _veiculoRepository = veiculoRepository;
+            _clienteRepository = clienteRepository;
     }
 
         //Método que recebe o id do veículo para exibir os clientes (test drive)
@@ -53,7 +56,7 @@ namespace Fiap.Aula04.Web.Controllers
         private void CarregarClientes()
         {
             //Pesquisar todos os clientes
-            var lista = _context.Clientes.ToList();
+            var lista = _clienteRepository.Listar();
             //Enviar os clientes para preencher o select
             //lista, valor da option (PK), texto da option
             ViewBag.clientes = new SelectList(lista, "ClienteId", "Nome"); //ClienteID e Nome vêm da Model Cliente
@@ -82,8 +85,10 @@ namespace Fiap.Aula04.Web.Controllers
         [HttpPost]
         public IActionResult Editar(Veiculo veiculo)
         {
-            _context.Veiculos.Update(veiculo);
-            _context.SaveChanges();
+            //Atualizar no banco
+            _veiculoRepository.Atualizar(veiculo);
+            //Commit
+            _veiculoRepository.Salvar();
             TempData["msg"] = "Veículo atualizado!";
             return RedirectToAction("Index");  
         }
@@ -114,14 +119,14 @@ namespace Fiap.Aula04.Web.Controllers
         public IActionResult Index(int ano, string modelo, int cliente)
         {
             //Contar a quantidade de veículos registrado
-            var qtd = _context.Veiculos.Count();
+            var qtd = _veiculoRepository.Contar();
             //Enviar a informação para a view
             ViewBag.qtd = qtd;
 
             //Enviar o select list para preencher o select de clientes
-            var clientes = _context.Clientes
-                .Where(c => c.Veiculos.Any()) // pesquisa somente os clientes que possuem veículo
-                .ToList();
+            //.Any() -> verifica se existe algum item na lista
+            // pesquisa somente os clientes que possuem veículo
+            var clientes = _clienteRepository.PesquisarPor(c => c.Veiculos.Any());
 
             //Enviar os clientes para preencher o select
             //clientes, valor da option (PK), texto da option

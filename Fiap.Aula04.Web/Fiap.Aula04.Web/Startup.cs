@@ -31,6 +31,7 @@ namespace Fiap.Aula04.Web
 
             //Configuração da injeção de dependência dos repositories
             services.AddScoped<IVeiculoRepository, VeiculoRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
 
             services.AddControllersWithViews();
         }
