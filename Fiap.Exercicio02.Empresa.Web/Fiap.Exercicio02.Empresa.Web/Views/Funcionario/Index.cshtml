@@ -1,0 +1,33 @@
+﻿@model IList<Funcionario>
+
+@{
+    ViewData["Title"] = "Funcionários";
+}
+
+<h1>Lista de Funcionários</h1>
+
+<div class="text-right">
+    <a asp-action="cadastrar" class="btn btn-primary">Cadastrar</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Data Nascimento</th>
+        <th>Ativo</th>
+        <th>Cargo</th>
+        <th>Instituição</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.DataNascimento.ToShortDateString()</td>
+            <td>@(item.Ativo? "Ativo" : "Inativo")</td>
+            <td>@item.Cargo</td>
+            <td>@item.Instituicao?.Nome</td>
+        </tr>
+    }
+
+</table>

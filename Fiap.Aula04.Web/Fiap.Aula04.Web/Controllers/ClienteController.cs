@@ -87,9 +87,9 @@ namespace Fiap.Aula04.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Index(string nome)
+        public IActionResult Index(string busca)
         {
-            var lista = _clienteRepository.PesquisarPor(c => c.Nome.Contains(nome)|| string.IsNullOrEmpty(nome)).ToList();
+            var lista = _clienteRepository.PesquisarPor(c => c.Nome.Contains(busca) || string.IsNullOrEmpty(busca)).ToList();
             ViewBag.clientes = lista; //envia a lista de clientes para a view
             return View();
         }
