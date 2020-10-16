@@ -8,16 +8,21 @@
 
 <mensagem texto="@TempData["msg"]"></mensagem>
 
+<!-- Exibe todas as mensagens de erro -->
+<div asp-validation-summary="All"></div>
+
 <form asp-action="cadastrar">
 
     <div class="form-group">
         <label asp-for="Funcionario.Nome"></label>
         <input asp-for="Funcionario.Nome" class="form-control" />
+        <span asp-validation-for="Funcionario.Nome" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="Funcionario.DataNascimento"></label>
         <input asp-for="Funcionario.DataNascimento" class="form-control" />
+        <span asp-validation-for="Funcionario.DataNascimento" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -30,6 +35,7 @@
         <select asp-for="Funcionario.Cargo" class="form-control" asp-items="@Html.GetEnumSelectList<Cargo>()">
             <option>Selecione</option>
         </select>
+        <span asp-validation-for="Funcionario.Cargo" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -37,8 +43,14 @@
         <select asp-for="Funcionario.InstituicaoId" class="form-control" asp-items="Model.Instituicoes">
             <option>Selecione</option>
         </select>
+        <span asp-validation-for="Funcionario.InstituicaoId" class="text-danger"></span>
     </div>
 
     <input type="submit" value="Cadastrar" class="btn btn-primary" />
 
 </form>
+
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

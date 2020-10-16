@@ -27,11 +27,20 @@ namespace Fiap.Exercicio02.Empresa.Web.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Instituicao instituicao)
         {
-            _instituicaoRepository.Cadastrar(instituicao);
-            _instituicaoRepository.Salvar();
-            TempData["msg"] = "Instituição cadastrado!";
-            return RedirectToAction("Cadastrar");
+            if (ModelState.IsValid)
+            {
+                _instituicaoRepository.Cadastrar(instituicao);
+                _instituicaoRepository.Salvar();
+                TempData["msg"] = "Instituição cadastrado!";
+                return RedirectToAction("Cadastrar");
+            }
+            else
+            {
+                return View();
+            }
+            
         }
+
 
         public IActionResult Index()
         {

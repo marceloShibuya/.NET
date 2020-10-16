@@ -18,10 +18,10 @@ namespace Fiap.Exercicio02.Empresa.Web.Models
 
         public int InstituicaoId { get; set; }
 
-        [MaxLength(50), Required]
+        [MaxLength(50), Required(ErrorMessage = "O nome é obrigatório")]
         public String Nome { get; set; }
 
-        [Display(Name = "Data Nascimento"), DataType(DataType.Date)]
+        [Display(Name = "Data Nascimento"), DataType(DataType.Date, ErrorMessage = "Data inválida")]
         public DateTime DataNascimento { get; set; }
 
         public bool Ativo { get; set; }

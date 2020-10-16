@@ -26,21 +26,34 @@ namespace Fiap.Exercicio02.Empresa.Web.Controllers
         [HttpGet] 
         public IActionResult Cadastrar()
         {
-            var model = new FuncionarioViewModel()
-            {
-                Instituicoes = new SelectList(_instituicaoRepository.Listar(), "InstituicaoId", "Nome")
-            };
-
-            return View(model); //Abre a tela -> /Views/Funcionario/Cadastrar.cshtml
+            return View(CarregarModel());
         }
 
         [HttpPost]
         public IActionResult Cadastrar(Funcionario funcionario)
         {
-            _funcionarioRepository.Cadastrar(funcionario);
-            _funcionarioRepository.Salvar();
-            TempData["msg"] = "Funcionário cadastrado!";
-            return RedirectToAction("Cadastrar");
+            // Validar se o funcionário está OK
+            if (ModelState.IsValid)
+            {
+                _funcionarioRepository.Cadastrar(funcionario);
+                _funcionarioRepository.Salvar();
+                TempData["msg"] = "Funcionário cadastrado!";
+                return RedirectToAction("Cadastrar");
+            }
+            else
+            {
+                return View(CarregarModel());
+            }
+        }
+
+        private FuncionarioViewModel CarregarModel()
+        {
+            var model = new FuncionarioViewModel()
+            {
+                Instituicoes = new SelectList(_instituicaoRepository.Listar(), "InstituicaoId", "Nome")
+            };
+
+            return model;
         }
 
         public IActionResult Index()

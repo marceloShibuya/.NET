@@ -16,11 +16,11 @@ namespace Fiap.Exercicio02.Empresa.Web.Models
 
         public IList<Funcionario> Funcionarios { get; set; }
 
-        [MaxLength(50), Required]
+        [MaxLength(50), Required(ErrorMessage = "o nome é obrigatório")]
         public String Nome { get; set; }
 
-        [Required, MaxLength(20)]
-        public int Cnpj { get; set; }
+        [Required(ErrorMessage = "o cnpj é obrigatório"), MaxLength(20)]
+        public String Cnpj { get; set; }
 
     }
 }
