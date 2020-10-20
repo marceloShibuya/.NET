@@ -11,6 +11,8 @@ namespace Fiap.Aula05.API.Persistencia
     {
         public DbSet<Produto> Produtos { get; set; }
 
+        public DbSet<Cliente> Clientes { get; set; }
+
         public LojaContext(DbContextOptions options) : base (options)
         {
 

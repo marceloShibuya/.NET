@@ -31,6 +31,8 @@ namespace Fiap.Aula05.API
 
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+
             services.AddControllers();
         }
 

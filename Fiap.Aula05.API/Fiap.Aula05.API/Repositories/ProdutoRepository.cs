@@ -1,5 +1,6 @@
 ﻿using Fiap.Aula05.API.Models;
 using Fiap.Aula05.API.Persistencia;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,14 @@ namespace Fiap.Aula05.API.Repositories
 
         public void Atualizar(Produto produto)
         {
+            //Pesquisar o produto que está gerenciado
+            var local = _context.Produtos.Local.FirstOrDefault(p => p.ProdutoId == produto.ProdutoId);
+
+            //Remover o produto do gerenciamento
+            if(local != null) _context.Entry(local).State = EntityState.Detached;
+
             _context.Produtos.Update(produto);
+
         }
 
         public Produto Buscar(int id)
